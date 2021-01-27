@@ -8,8 +8,20 @@ Widget getXSnackBar = Center(
     children: [
       RaisedButton(
         onPressed: () {
-          Get.snackbar('Snack Bar', 'This will be snack bar message',
-              snackPosition: SnackPosition.BOTTOM);
+          Get.snackbar(
+            'Snack Bar',
+            'This will be snack bar message',
+            snackPosition: SnackPosition.BOTTOM,
+            margin: EdgeInsets.all(20),
+            isDismissible: true,
+            dismissDirection: SnackDismissDirection.HORIZONTAL,
+            forwardAnimationCurve: Curves.bounceInOut,
+            reverseAnimationCurve: Curves.bounceIn,
+            mainButton: FlatButton(
+              onPressed: () {},
+              child: Text('Retry'),
+            ),
+          );
         },
         child: Text('Show Snack Bar'),
       )
